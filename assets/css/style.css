@@ -5,6 +5,8 @@
 :root {
     /* --header-bg: #10375c; */
     --header-bg: orange;
+    --font-color: #fff;
+    --height: 60px;
 }
 
 html {
@@ -26,8 +28,29 @@ a {
     margin: 0px auto;
 }
 
+.btn {
+    display: inline-block;
+    color: #fff;
+    padding: 0 20px;
+    height: var(--height);
+    min-width: 205px;
+    background-color: #2e80ce;
+    border-radius: 999px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 59px;
+    text-align: center;
+    cursor: pointer;
+    border:1px solid #2e80ce;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
 /* Header */
 .header {
+    padding-top: 30px;
     min-height: 100vh;
     background-color: var(--header-bg);
 }
@@ -79,4 +102,51 @@ a {
     font-size: 1.2em;
     font-weight: 300;
     text-align: right;
+}
+
+/* Header top */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__list {
+    display: flex;
+}
+
+.navbar__link,
+.action__login {
+    color: #c9d2da;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.8;
+    padding: 4px 19px;
+    margin-right: 3px;
+}
+
+.navbar__item--active,
+.navbar__link:hover {
+    color: var(--font-color);
+    text-shadow: 1px 1px 0px currentColor;
+}
+
+.navbar__item--active::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.action__signup {
+    --height: 44px;
+    height: var(--height);
+    min-width: 144px;
+    line-height: var(--height);
+    font-size: 1.6rem;
+    font-weight: 400; 
 }
